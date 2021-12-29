@@ -1,0 +1,49 @@
+#logo {
+    background-image: url(sprites/dino.png);
+    background-size: 50px 50px;
+    width: 50px;
+    height: 50px;
+    image-rendering: pixelated;
+    display: inline-block;
+    margin-top: 40px;
+}
+
+#logo:hover {
+    animation: move 0.3s linear infinite;
+}
+
+#logo:active {
+    animation: jump 0.3s linear infinite;
+}
+
+#container {
+    text-align: center;
+}
+
+#v2 {
+    margin-top: 10rem;    
+}
+
+#v1 {
+    margin-top: 1rem;
+}
+
+body {
+    background-image: url(sprites/bg.png);
+    background-size: cover;
+    image-rendering: pixelated;
+    background-position: center bottom;
+    background-attachment: fixed;
+    background-color: rgb(158, 221, 250);
+
+    animation: body 200s infinite linear;
+}
+
+@keyframes body {
+    from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: -10000px 0; /* dla 100% 30s */
+      }
+}

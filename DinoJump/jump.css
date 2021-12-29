@@ -1,0 +1,279 @@
+* {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+/*
+body {
+     background-color: rgb(158, 221, 250);
+} 
+*/
+
+.game {
+    width: 500px;
+    height: 200px;
+    border-bottom: 1px solid black;
+    margin: auto;
+    background-color: rgb(158, 221, 250);
+    image-rendering: pixelated;
+    overflow: hidden;
+}
+
+#dino {
+    width: 50px;
+    height: 50px;
+    background-image: url(sprites/dino.png);
+    background-size: 50px 50px;
+    position: relative;
+    top: 150px;
+    left: 0;
+    right: 0;
+    
+    z-index: 2;
+
+   /* animation: move 0.3s linear; */
+}
+
+.move {
+    animation: move 0.3s infinite linear;
+}
+
+@keyframes move {
+    0% {
+        background-image: url(dino/dino_move3.png);
+    }
+    33% {
+        background-image: url(dino/dino_move1.png);
+    }
+    66% {
+        background-image: url(dino/dino_move2.png);
+    }
+    99% {
+        background-image: url(dino/dino_move3.png);
+    }
+    100% {
+        background-image: url(dino/dino_move3.png);
+    }
+}
+
+.animate {
+    animation: jump 0.3s linear;
+}
+
+@keyframes jump {
+    0%{
+        top: 150px;
+        background-image: url("sprites/dino_jump.png");
+    }
+    30%{
+        top: 100px;
+        background-image: url("sprites/dino_jump.png");
+    }
+    70%{
+        top: 100px;
+        background-image: url("sprites/dino_jump.png");
+    }
+    100%{
+        top: 150px;
+    }
+}
+
+#cactus {
+    width: 32px;
+    height: 48px;
+    position: relative;
+   /* top: 102px; dla scale 1.0 */
+    top: 95px;
+    left: 580px;
+  
+    background-image: url("sprites/cactus.png");
+    background-size: 32px 48px;
+    z-index: 2;
+  
+    animation: cactus 1s infinite linear;
+
+    transform: scale(1.3);
+}
+
+@keyframes cactus {
+    0% {
+        left: 500px;
+    }
+    100% {
+        left: -20px;
+    }
+}
+
+#bird {
+    width: 64px;
+    height: 32px;
+    position: relative;
+
+    top: 5x;
+    left: 580px;
+
+    background-image: url("sprites/bird.png");
+    background-size: 64px 32px;
+    transform: scale(1.3);
+
+    animation: bird 4s infinite linear, bird_fly 1s infinite linear;
+
+    z-index: 2;
+}
+
+@keyframes bird_fly {
+    0% {
+        background-image: url("sprites/bird.png");
+    }
+    100% {
+        background-image: url("sprites/bird_fly.png");
+    }
+}
+
+@keyframes bird {
+    0% {
+        left: 500px;
+    }
+    70% {
+        left: 100px
+    }
+    100% {
+        left: -60px;
+    }
+}
+
+#scoreBest p {
+    text-align: center;
+    margin-top: 10px;
+    color: dodgerblue;
+    font-size: x-large;
+}
+
+.p {
+    text-align: center;
+    margin-top: 10px;
+    color: dodgerblue;
+    font-size: x-large;
+}
+
+@keyframes tree {
+    0% {
+        left: 550px;
+    }
+    100% {
+        left: -140px;
+    }
+}
+
+#tree {
+    width: 128px;
+    height: 48px;
+    position: relative;
+   /* top: 102px; dla scale 1.0 */
+    left: 580px;
+    top: 15px;
+    background: url("sprites/tree.png");
+    background-size: 32px 48px;
+
+    animation: tree 13s infinite linear;
+    transform: scale(1.3);
+    z-index: 1;
+    
+    margin-left: 20px;
+
+    background-position: left center;
+
+    opacity: 1;
+}
+
+#scoreBest {
+    margin-top: 80px;
+    text-align: center;
+}
+
+#bestScore {
+    font-size: x-large;
+}
+
+.cloud {
+    width: 48px;
+    height: 32px;
+    position: relative;
+    left: -580px;
+    top: -120px;
+    background: url("sprites/cloud.png");
+    background-size: 48px 32px;
+    bottom: 100px;
+
+    animation: cactus 30s infinite linear;
+    transform: scale(1);
+
+    z-index: 2;
+}
+
+/*
+#background {
+
+    width: 520px;
+    height: 150px; 
+    position: relative;
+
+    top: 200px;
+    left: 480px;
+
+    background-size: 520px 150px;
+    background-image: url("background.png");
+
+    animation: bg 5s infinite linear;
+} */
+
+footer {
+    margin-top: 560px;
+    opacity: 0.7;
+    color: rgb(211, 130, 99);
+}
+
+/* DARK MODE */
+
+#bg {
+    width: 1024px;
+    height: 90px;
+    position: relative;
+   /* top: 102px; dla scale 1.0 */
+    top: -122px;
+    background: url("sprites/bg.png");
+    background-size: 256px 90px;
+    transform: scale(1.5);
+
+    filter: blur(0.3px);
+
+    animation: bg 30s infinite linear;
+    z-index: 0;
+}
+
+@keyframes bg {
+    0% {
+        left: 250px;
+    }
+    100% {
+        left: -140px;
+    }
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#updates {
+    text-align: center;
+    margin-top: 20px;
+    color: dodgerblue;
+    font-size: large;
+}
+
+#updates a {
+    color: dodgerblue;
+    text-decoration: none;
+}

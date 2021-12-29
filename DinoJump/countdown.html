@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="dino.png" type="image/x-icon"/>
+    <title>Dino Jump</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
+</head>
+
+<body>
+
+    <style>
+    * {
+    padding: 0;
+    margin: 0;
+    }   
+
+    p {
+    text-align: center;
+    font-size: 60px;
+    font-family: Roboto, sans-serif;
+    margin-top: 450px;
+    }
+    body {
+        background-color: rgb(162, 252, 174);
+    }
+
+    footer {
+        margin-top: 432px;
+    }
+
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900);
+
+    </style>
+
+    <p id="countDown"></p>
+
+    <script>
+        
+        var countDownDate = new Date("Nov 6, 2021 21:00:00").getTime();
+
+        var x = setInterval(function() {
+          var now = new Date().getTime();
+            
+          var distance = countDownDate - now;
+            
+          //var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+          document.getElementById("countDown").innerHTML = hours + " hours "
+          + minutes + " minutes " + seconds + " seconds ...";
+            
+          if (distance < 0) {
+            clearInterval(x);
+            window.location.replace("Jump.html");
+          }
+        }, 1000);
+        </script>
+
+</body>
+<footer>
+    2021 &copy; Łukasz Mrowiec
+</footer>
+</html>

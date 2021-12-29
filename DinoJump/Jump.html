@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl" onclick="jump()"> <!-- Build 2.1 -->
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="sprites/dino.png" type="image/x-icon"/>
+    <title>Dino Jump</title>
+    <link rel="stylesheet" href="jump.css">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
+</head>
+
+<body>
+    <div class="game">
+        <div id="dino" class="move"></div>
+        <div id="cactus"></div>
+        <div id="bird"></div>
+        <div id="tree"></div>
+        <div class="cloud"></div>
+        <div id="bg"></div>
+      </div>
+    <p class="p">Score: <span id="scoreSpan"></span></p>
+
+    <div id="scoreBest">
+        <p>Your best score: </p> <span id="bestScore"></span>
+        <p>Your previous score was: </p> <span id="prevScore"></span>
+    </div>
+
+    <div id="updates"><a href="updates.html">Update log</a></div>
+    <!--<button class="btn">Jump</button> -->
+</body>
+    <script src="jump.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <footer>
+        2021 &copy; Dino Jump 2.0.0
+    </footer>
+
+</html>
